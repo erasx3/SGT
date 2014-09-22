@@ -1,6 +1,6 @@
 <?php
 
-namespace Pepe\SistemBundle\Entity;
+namespace Pepe\SistemBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

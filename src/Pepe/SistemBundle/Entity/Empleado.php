@@ -5,7 +5,7 @@ namespace Pepe\SistemBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Empleado
+ * empleado
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Pepe\SistemBundle\Entity\Repository\EmpleadoRepository")
