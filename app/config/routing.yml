@@ -1,0 +1,12 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+theme:
+    resource: "@ThemeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+sistem:
+    resource: "@SistemBundle/Resources/config/routing.yml"
+    prefix:   /
+
