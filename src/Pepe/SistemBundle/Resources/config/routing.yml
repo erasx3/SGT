@@ -1,3 +1,24 @@
 sistem_homepage:
     path:     /hello/{name}
     defaults: { _controller: SistemBundle:Default:index }
+SistemBundle_cliente:
+    resource: "@SistemBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+SistemBundle_egreso:
+    resource: "@SistemBundle/Resources/config/routing/egreso.yml"
+    prefix:   /egreso
+SistemBundle_empleado:
+    resource: "@SistemBundle/Resources/config/routing/empleado.yml"
+    prefix:   /empleado
+SistemBundle_pago:
+    resource: "@SistemBundle/Resources/config/routing/pago.yml"
+    prefix:   /pago
+SistemBundle_puesto:
+    resource: "@SistemBundle/Resources/config/routing/puesto.yml"
+    prefix:   /puesto
+SistemBundle_servicio:
+    resource: "@SistemBundle/Resources/config/routing/servicio.yml"
+    prefix:   /servicio
+SistemBundle_turno:
+    resource: "@SistemBundle/Resources/config/routing/turno.yml"
+    prefix:   /turno

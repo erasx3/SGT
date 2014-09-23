@@ -1,0 +1,30 @@
+puesto:
+    path:     /
+    defaults: { _controller: "SistemBundle:Puesto:index" }
+
+puesto_show:
+    path:     /{id}/show
+    defaults: { _controller: "SistemBundle:Puesto:show" }
+
+puesto_new:
+    path:     /new
+    defaults: { _controller: "SistemBundle:Puesto:new" }
+
+puesto_create:
+    path:     /create
+    defaults: { _controller: "SistemBundle:Puesto:create" }
+    requirements: { _method: post }
+
+puesto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SistemBundle:Puesto:edit" }
+
+puesto_update:
+    path:     /{id}/update
+    defaults: { _controller: "SistemBundle:Puesto:update" }
+    requirements: { _method: post|put }
+
+puesto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SistemBundle:Puesto:delete" }
+    requirements: { _method: post|delete }

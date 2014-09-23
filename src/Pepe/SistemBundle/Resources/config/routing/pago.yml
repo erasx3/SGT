@@ -1,0 +1,30 @@
+pago:
+    path:     /
+    defaults: { _controller: "SistemBundle:Pago:index" }
+
+pago_show:
+    path:     /{id}/show
+    defaults: { _controller: "SistemBundle:Pago:show" }
+
+pago_new:
+    path:     /new
+    defaults: { _controller: "SistemBundle:Pago:new" }
+
+pago_create:
+    path:     /create
+    defaults: { _controller: "SistemBundle:Pago:create" }
+    requirements: { _method: post }
+
+pago_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SistemBundle:Pago:edit" }
+
+pago_update:
+    path:     /{id}/update
+    defaults: { _controller: "SistemBundle:Pago:update" }
+    requirements: { _method: post|put }
+
+pago_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SistemBundle:Pago:delete" }
+    requirements: { _method: post|delete }

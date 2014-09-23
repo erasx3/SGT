@@ -1,0 +1,30 @@
+turno:
+    path:     /
+    defaults: { _controller: "SistemBundle:Turno:index" }
+
+turno_show:
+    path:     /{id}/show
+    defaults: { _controller: "SistemBundle:Turno:show" }
+
+turno_new:
+    path:     /new
+    defaults: { _controller: "SistemBundle:Turno:new" }
+
+turno_create:
+    path:     /create
+    defaults: { _controller: "SistemBundle:Turno:create" }
+    requirements: { _method: post }
+
+turno_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SistemBundle:Turno:edit" }
+
+turno_update:
+    path:     /{id}/update
+    defaults: { _controller: "SistemBundle:Turno:update" }
+    requirements: { _method: post|put }
+
+turno_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SistemBundle:Turno:delete" }
+    requirements: { _method: post|delete }

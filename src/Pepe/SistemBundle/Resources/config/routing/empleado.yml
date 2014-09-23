@@ -1,0 +1,30 @@
+empleado:
+    path:     /
+    defaults: { _controller: "SistemBundle:Empleado:index" }
+
+empleado_show:
+    path:     /{id}/show
+    defaults: { _controller: "SistemBundle:Empleado:show" }
+
+empleado_new:
+    path:     /new
+    defaults: { _controller: "SistemBundle:Empleado:new" }
+
+empleado_create:
+    path:     /create
+    defaults: { _controller: "SistemBundle:Empleado:create" }
+    requirements: { _method: post }
+
+empleado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SistemBundle:Empleado:edit" }
+
+empleado_update:
+    path:     /{id}/update
+    defaults: { _controller: "SistemBundle:Empleado:update" }
+    requirements: { _method: post|put }
+
+empleado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SistemBundle:Empleado:delete" }
+    requirements: { _method: post|delete }

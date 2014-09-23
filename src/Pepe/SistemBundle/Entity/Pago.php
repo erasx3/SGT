@@ -41,7 +41,20 @@ class Pago
      * @ORM\Column(name="monto", type="float")
      */
     private $monto;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
 
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Empleado", inversedBy="pagos")
+     * @ORM\JoinColumn(name="empleado_id", referencedColumnName="id")
+     */
+    private $empleado;
 
     /**
      * Get id
@@ -120,5 +133,51 @@ class Pago
     public function getMonto()
     {
         return $this->monto;
+    }
+
+    /**
+     * Set empleado
+     *
+     * @param \Pepe\SistemBundle\Entity\empleado $empleado
+     * @return Pago
+     */
+    public function setEmpleado(\Pepe\SistemBundle\Entity\empleado $empleado = null)
+    {
+        $this->empleado = $empleado;
+
+        return $this;
+    }
+
+    /**
+     * Get empleado
+     *
+     * @return \Pepe\SistemBundle\Entity\empleado 
+     */
+    public function getEmpleado()
+    {
+        return $this->empleado;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     * @return Pago
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
     }
 }

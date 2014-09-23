@@ -1,0 +1,30 @@
+egreso:
+    path:     /
+    defaults: { _controller: "SistemBundle:Egreso:index" }
+
+egreso_show:
+    path:     /{id}/show
+    defaults: { _controller: "SistemBundle:Egreso:show" }
+
+egreso_new:
+    path:     /new
+    defaults: { _controller: "SistemBundle:Egreso:new" }
+
+egreso_create:
+    path:     /create
+    defaults: { _controller: "SistemBundle:Egreso:create" }
+    requirements: { _method: post }
+
+egreso_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SistemBundle:Egreso:edit" }
+
+egreso_update:
+    path:     /{id}/update
+    defaults: { _controller: "SistemBundle:Egreso:update" }
+    requirements: { _method: post|put }
+
+egreso_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SistemBundle:Egreso:delete" }
+    requirements: { _method: post|delete }

@@ -62,8 +62,35 @@ class Empleado
      * @ORM\Column(name="cuil", type="string", length=100)
      */
     private $cuil;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
 
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Puesto", inversedBy="empleados")
+     * @ORM\JoinColumn(name="puesto_id", referencedColumnName="id")
+     */
+    private $puesto;
 
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="Pago", mappedBy="empleado")
+     */
+    private $pagos;
+    
+    /**
+     *
+     * 
+     * @ORM\ManyToMany(targetEntity="Turno", inversedBy="empleados")
+     * @ORM\JoinTable(name="empleados_turnos")
+     **/  
+    private $turnos;
+    
     /**
      * Get id
      *
@@ -210,5 +237,124 @@ class Empleado
     public function getCuil()
     {
         return $this->cuil;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->pagos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set puesto
+     *
+     * @param \Pepe\SistemBundle\Entity\puesto $puesto
+     * @return Empleado
+     */
+    public function setPuesto(\Pepe\SistemBundle\Entity\puesto $puesto = null)
+    {
+        $this->puesto = $puesto;
+
+        return $this;
+    }
+
+    /**
+     * Get puesto
+     *
+     * @return \Pepe\SistemBundle\Entity\puesto 
+     */
+    public function getPuesto()
+    {
+        return $this->puesto;
+    }
+
+    /**
+     * Add pagos
+     *
+     * @param \Pepe\SistemBundle\Entity\pago $pagos
+     * @return Empleado
+     */
+    public function addPago(\Pepe\SistemBundle\Entity\pago $pagos)
+    {
+        $this->pagos[] = $pagos;
+
+        return $this;
+    }
+
+    /**
+     * Remove pagos
+     *
+     * @param \Pepe\SistemBundle\Entity\pago $pagos
+     */
+    public function removePago(\Pepe\SistemBundle\Entity\pago $pagos)
+    {
+        $this->pagos->removeElement($pagos);
+    }
+
+    /**
+     * Get pagos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPagos()
+    {
+        return $this->pagos;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     * @return Empleado
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Add turnos
+     *
+     * @param \Pepe\SistemBundle\Entity\Turno $turnos
+     * @return Empleado
+     */
+    public function addTurno(\Pepe\SistemBundle\Entity\Turno $turnos)
+    {
+        $this->turnos[] = $turnos;
+
+        return $this;
+    }
+
+    /**
+     * Remove turnos
+     *
+     * @param \Pepe\SistemBundle\Entity\Turno $turnos
+     */
+    public function removeTurno(\Pepe\SistemBundle\Entity\Turno $turnos)
+    {
+        $this->turnos->removeElement($turnos);
+    }
+
+    /**
+     * Get turnos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTurnos()
+    {
+        return $this->turnos;
     }
 }

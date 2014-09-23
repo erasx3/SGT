@@ -34,6 +34,19 @@ class Servicio
      * @ORM\Column(name="Descripcion", type="string", length=255)
      */
     private $descripcion;
+    
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
+    
+     /**
+     *
+     * @ORM\OneToMany(targetEntity="Turno", mappedBy="servicio")
+     */
+    private $turnos;
 
 
     /**
@@ -90,5 +103,68 @@ class Servicio
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->turnos = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add turnos
+     *
+     * @param \Pepe\SistemBundle\Entity\turno $turnos
+     * @return Servicio
+     */
+    public function addTurno(\Pepe\SistemBundle\Entity\turno $turnos)
+    {
+        $this->turnos[] = $turnos;
+
+        return $this;
+    }
+
+    /**
+     * Remove turnos
+     *
+     * @param \Pepe\SistemBundle\Entity\turno $turnos
+     */
+    public function removeTurno(\Pepe\SistemBundle\Entity\turno $turnos)
+    {
+        $this->turnos->removeElement($turnos);
+    }
+
+    /**
+     * Get turnos
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTurnos()
+    {
+        return $this->turnos;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     * @return Servicio
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
     }
 }
