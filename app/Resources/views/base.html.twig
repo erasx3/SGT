@@ -3,11 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/theme/css/bootstrap.css')}}" type="text/css" rel="stylesheet"/>
+            <link href="{{ asset('bundles/theme/css/bootswatch.min.css')}}" type="text/css" rel="stylesheet"/>
+            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+             <div class="navbar navbar-default navbar-fixed-top">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SGT</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                       
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="{{path('fos_user_security_logout')}}">logout</a>
+                        </li>
+                    </ul>
+                </div>
+             </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="bs-component">
+                                    <div class="list-group">
+                                        <a href="{{path('cliente')}}" class="list-group-item">Cliente</a>
+                                        <a href="{{path('egreso')}}" class="list-group-item">Egresos</a>
+                                        <a href="{{path('empleado')}}" class="list-group-item">Empleado</a>
+                                        <a href="{{path('pago')}}" class="list-group-item">Pago</a>
+                                        <a href="{{path('puesto')}}" class="list-group-item">Puesto</a>
+                                        <a href="{{path('servicio')}}" class="list-group-item">Servicio</a>
+                                        <a href="{{path('turno')}}" class="list-group-item">Turno</a>                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/pepe/js/jquery-1.8.3.min.js')}}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/pepe/js/bootstrap.min.js')}}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/pepe/js/jquery-ui.min.js')}}" type="text/javascript"></script>
+        {% endblock %}
     </body>
 </html>

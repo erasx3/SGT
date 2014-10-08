@@ -1,3 +1,6 @@
+homepage:
+    path:     /index
+    defaults: { _controller: SistemBundle:Default:index}
 sistem_homepage:
     path:     /hello/{name}
     defaults: { _controller: SistemBundle:Default:index }
